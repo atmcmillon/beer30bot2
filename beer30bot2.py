@@ -82,4 +82,4 @@ async def recmeone(ctx, n: int, city, state):
         await ctx.channel.send("Here are %d breweries to try from %s, %s. Check your local store:" % (n, city, state))
         await ctx.channel.send(sample)
 
-bot.run('ODM5MjkyMDE0MjA1NzMwODE2.YJHhmQ.C-pbk2M3nzBk3IO6lLVnym1A5Qo')
+bot.run('insert_your_token_here')
