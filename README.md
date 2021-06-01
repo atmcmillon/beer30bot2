@@ -28,3 +28,5 @@ Beer30Bot2 has a few setbacks currently. The daily-repeated task (`beer_30()`) d
 
 # Requirements
 Beer30Bot2 requires the above python modules to operate. `os` and `time` are built-in to the Python language, so no need to fret there. For everything else, use `python3 -m pip install libname` in your terminal for `art`, `datetime`, `discord/discord.ext/discord.utils`, and `openbrewerydb`.
+
+Special thanks to GitHub user [jrbourbeau](https://github.com/jrbourbeau/openbrewerydb-python) for creating `openbrewerydb`!
