@@ -5,13 +5,13 @@ With a mix of both in-person and virtual cocktail hours, parties, and tastings, 
 
 Beer30Bot2 uses a few different python modules:
 
-`os
-discord
-discord.ext, commands
-art, text2art
-datetime, datetime
-OpenBreweryDB
-time, localtime, strftime`
+- `os`
+- `discord`
+- `discord.ext, commands`
+- `art, text2art`
+- `datetime, datetime`
+- `OpenBreweryDB`
+- `time, localtime, strftime`
 
 These allow users to make commands to Beer30Bot2 that either tell them the time, or gives them beer recommendations. The two primary jobs are a repeated task that notifies the group that it is Beer:30, followed by the function that recommends breweries to people from the `pandas`-based OpenBreweryDB library.
 
