@@ -62,24 +62,22 @@ async def beerme(ctx, input):
     help='Uses some tools to pull n randomly selected beers from OpenBreweryDB.',
     brief='Returns n amount of randomly selected beers from OpenBreweryDB as\n brewery information to the user. Use the syntax `!recmeone n city state`.\n If a state or city has two words, put them inside `''`.'
 )
-async def recmeone(ctx, n: int, city, state):
+async def recmeone(ctx, n: int, city):
     #await ctx.channel.send("Wish I could, but I don't have that feature yet.")
     
     ct = city.lower()
-    st = state.lower()
-    
-    data = openbrewerydb.load(city=ct, state=st)
+    data = openbrewerydb.load(city=ct)
     useful_data = data.drop(data.columns[[0, 1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17]], axis=1)
     
     if n < 1:
         await ctx.channel.send("Haha, sorry, but we don't serve under age users.")
     elif n > len(data):
-        await ctx.channel.send("Ouch! Looks like there isn't enough for you to try in %s, %s!" % (city, state))
+        await ctx.channel.send("Ouch! Looks like there isn't enough for you to try in %s!" % (city))
     # elif ct not in data:
     #     await ctx.channel.send("It doesn't look like that place is in the database. Try somewhere else?")
     else:
         sample = useful_data.sample(n)
-        await ctx.channel.send("Here are %d breweries to try from %s, %s. Check your local store:" % (n, city, state))
+        await ctx.channel.send("Here are %d breweries to try from %s. Check your local store:" % (n, city))
         await ctx.channel.send(sample)
 
 bot.run('insert_your_token_here')
